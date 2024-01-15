@@ -25,5 +25,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select * from board where bno = #{bno}
     
     </select>
+    
+    <update id="modify">
+
+        update board set
+        
+        	title = #{title}, 
+        	content = #{content}, 
+        	updatedate = now() 
+        	
+        where bno = #{bno}
+        
+	</update>
+	
+	<delete id="delete">
+	
+		delete from board
+		
+		where bno = #{bno}
+	
+	</delete>        
 
 </mapper>

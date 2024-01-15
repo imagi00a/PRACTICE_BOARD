@@ -83,9 +83,14 @@
                 <td>
                 <!-- '목록 페이지(list.jsp)'에서 제목을 클릭했을 때 해당 '조회 페이지(get.jsp)' 페이지로 이동할 수 있도록 <a> 태그를 추가 -->
                 	
+                	<!--
                 	<a class="move" href="/board/get?bno=<c:out value="${list.bno}"/>">
 				        <c:out value="${list.title}"/>
 				    </a>
+				    -->
+				    <a class="move" href='<c:out value="${list.bno}"/>'>
+        				<c:out value="${list.title}"/>
+    				</a>
                 </td>
                 <td><c:out value="${list.writer}"/></td>
                  
@@ -122,12 +127,19 @@
 			            alert("등록이 완료되었습니다.");
 			        }
 			        
+			        if(result === "modify success"){
+			            alert("수정이 완료되었습니다.");
+			        }
+			        
+			        if(result === "delete success"){
+			            alert("삭제가 완료되었습니다.");
+			        }
+			        
 			    }    
 			    
 			});
 			
-		<!--'클릭한 <a>태그 기능 정지'  '<form> 태그 내부 bno값을 저장하는 <input>태그 생성'
-		       '<form>태그 action 속성 추가' => '<form>태그 내부 데이터 서버 전송'-->
+		<!--클릭한 <a>태그 기능 정지  <form> 태그 내부 bno값을 저장하는 <input>태그 생성 <form>태그 action 속성 추가  <form>태그 내부 데이터 서버 전송-->
 		       
 			let moveForm = $("#moveForm");
 			 

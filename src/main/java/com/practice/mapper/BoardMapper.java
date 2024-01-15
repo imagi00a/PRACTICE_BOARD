@@ -18,4 +18,15 @@ public interface BoardMapper {
 	//int bno를 파라미터로 추가한다.
 	public BoardVO getPage(int bno);
 	
+	//게시판 수정
+	// bno, title, content, writer에 대한 데이터가 필요로 하기 때문에 해당 변수들이 정의되어 있는 BoardVO를 파라미터로 추가
+	//수정을 진행하는 메소드는 반환 타입이 필요없음.
+	//하지만 int형으로 설정해 성공시1, 실패시0 반환.
+	public int modify(BoardVO board);
+	
+	//게시판 삭제
+	//반환 타입은 '수정'과 동일하게 int형으로 작성. 삭제 쿼리가 성공을 하면 '1'을 반환, 실패하면 '0'을 반환
+	public int delete(int bno);
+	
+	
 }
